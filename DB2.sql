@@ -1,4 +1,4 @@
-﻿#Вставим пользователей из первой db
+﻿#Вставим пользователей из первой db и немножко рандомной магии
     INSERT INTO db2.users(user_id,full_name,billing_address,login,password)
       select st.student_id,st.name,char(65+rand()*26,65+rand()*26,65+rand()*26,65+rand()*26,65+rand()*26,65+rand()*26,65+rand()*26,65+rand()*26,65+rand()*26,65+rand()*26 USING utf8),
       char(65+rand()*26,65+rand()*26,65+rand()*26,65+rand()*26,65+rand()*26,65+rand()*26,65+rand()*26,65+rand()*26,65+rand()*26,65+rand()*26 USING utf8),
