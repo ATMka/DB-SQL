@@ -27,7 +27,8 @@ select i.item_id,MAX(b.bid_value) from bids b
 #Список действующих лотов данного пользователя
   select i.item_id,i.title,i.description,i.start_price,i.start_price,i.bid_increment from items i
     JOIN users u on i.users_user_id=u.user_id
-    where u.user_id=1;
+    where u.user_id=1
+    and (i.stop_date is NULL or CURRENT_TIMESTAMP between i.start_date and i.stop_date);
 #Добавить нового пользователя
   INSERT INTO users(full_name,billing_address,login,password) VALUES('Alexey Biyanov','Izhevsk','1','1');
 #Добавить новый лот
