@@ -14,7 +14,12 @@ select m.subject, st.name, m.mark from marks m
 select st.name, AVG(m.mark) as avg_marks from marks m
   join student st on m.student_id=st.student_id
   where st.student_id='3';
-
+  
+#Средняя оценка по каждому предмету
+select m.subject, AVG(m.mark) as avg_marks from marks m
+  group by m.subject
+  order by m.subject;
+ 
 #Средняя оценка по предмету «Java» по каждой группе
 select st.group, AVG(m.mark) as avg_marks from marks m
   join student st on m.student_id=st.student_id
